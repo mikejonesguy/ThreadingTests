@@ -1,0 +1,40 @@
+*** TEST 1 *** async await Start()
+
+DEBUG: Elapsed=130ms; Thread=1; ViewDidLoad() Complete
+DEBUG: Elapsed=166ms; Thread=1; Test - 'await Start();' pattern - ConfigureAwait(False)
+DEBUG: Elapsed=172ms; Thread=1; FileTest Begin
+DEBUG: Elapsed=3554ms; Thread=1; FileTest Data Ready To Write
+DEBUG: Elapsed=3588ms; Thread=1; Button.TouchUpInside()
+DEBUG: Elapsed=3594ms; Thread=1; Button.TouchUpInside()
+DEBUG: Elapsed=3595ms; Thread=1; Button.TouchUpInside()
+DEBUG: Elapsed=3801ms; Thread=1; FileTest Complete
+DEBUG: Elapsed=3802ms; Thread=1; Test Complete()
+DEBUG: Elapsed=3802ms; Thread=1; ViewDidAppear() Complete - Method Elapsed 3636ms
+
+
+*** TEST 2 *** Start().ContinueWith()
+
+DEBUG: Elapsed=134ms; Thread=1; ViewDidLoad() Complete
+DEBUG: Elapsed=171ms; Thread=1; Test - 'Start().ContinueWith();' pattern - ConfigureAwait(False)
+DEBUG: Elapsed=177ms; Thread=1; FileTest Begin
+DEBUG: Elapsed=3551ms; Thread=1; FileTest Data Ready To Write
+DEBUG: Elapsed=3563ms; Thread=1; ViewDidAppear() Complete - Method Elapsed 3392ms
+DEBUG: Elapsed=3590ms; Thread=1; Button.TouchUpInside()
+DEBUG: Elapsed=3607ms; Thread=1; Button.TouchUpInside()
+DEBUG: Elapsed=3608ms; Thread=1; Button.TouchUpInside()
+DEBUG: Elapsed=3791ms; Thread=1; FileTest Complete
+DEBUG: Elapsed=3792ms; Thread=9; Test Complete()
+
+
+*** TEST 3 *** Task.Run(async () => await Start())
+
+DEBUG: Elapsed=134ms; Thread=1; ViewDidLoad() Complete
+DEBUG: Elapsed=169ms; Thread=1; Test - 'Task.Run(async () => await Start());' pattern - ConfigureAwait(False)
+DEBUG: Elapsed=173ms; Thread=1; ViewDidAppear() Complete - Method Elapsed 4ms
+DEBUG: Elapsed=179ms; Thread=7; FileTest Begin
+DEBUG: Elapsed=987ms; Thread=1; Button.TouchUpInside()
+DEBUG: Elapsed=1269ms; Thread=1; Button.TouchUpInside()
+DEBUG: Elapsed=1641ms; Thread=1; Button.TouchUpInside()
+DEBUG: Elapsed=3661ms; Thread=7; FileTest Data Ready To Write
+DEBUG: Elapsed=3886ms; Thread=9; FileTest Complete
+DEBUG: Elapsed=3887ms; Thread=9; Test Complete()
